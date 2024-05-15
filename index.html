@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stove n' Oven</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <!--
+    <label for="toggler" class="fas fa-bars"></label>
+    <nav class="navbar-toggle">
+        <a href="pajarito_ex4.html">Home</a>
+        <a href="about.html">About us</a>
+        <a href="gallery.html">Menu</a>
+        <a href="review.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+-->
+    <a href="index.html">
+        <img src="images/logo.png" alt="Logo">
+    </a>
+    
+    <nav class="navbar">
+        <a href="#">Menu<i class="fas fa-angle-down"></i></a>
+        <div class="submenu">
+            <a href="pastries.html"><img src="images/logo-menu-image-pastries.png">Pastries</a>
+            <a href="cakes.html"><img src="images/logo-menu-image-cakes.png">Cakes</a>
+            <a href="food-trays.html"><img src="images/logo-menu-image-foodtrays.png">Food Trays</a>
+        </div>
+        <a href="about.html">About</a>
+        <a href="review.html">Reviews</a>
+        <a href="contact.html">Contact</a> 
+    </nav>
+        <a href="pastries.html" class="btn">START ORDER</a>
+</header>
+
+<script>
+    let menu = document.querySelector('.navbar a');
+let submenu = document.querySelector('.submenu');
+let submenuItems = document.querySelectorAll('.submenu a');
+
+let submenuVisible = false;
+
+menu.addEventListener('click', function(event) {
+    event.preventDefault();
+    if (!submenuVisible) {
+        submenu.style.opacity = '0'; 
+        submenu.style.display = 'block';
+        setTimeout(() => {
+            submenu.style.opacity = '1'; 
+        }, 50); 
+        submenuVisible = true;
+    } else {
+        submenu.style.opacity = '0'; 
+        setTimeout(() => {
+            submenu.style.display = 'none'; 
+        }, 300); 
+        submenuVisible = false;
+    }
+});
+
+submenuItems.forEach(item => {
+    item.addEventListener('click', function() {
+        submenu.style.display = 'none';
+        submenuVisible = false;
+    });
+});
+</script>
+
+<div class="slider">    
+    <div class="list">
+        <div class="item">
+            <img  src="images/Header-sliding-image-1.png" alt="Header Slider Image 1">
+        </div>
+        <div class="item">
+            <img  src="images/header-sliding-image-2.png" alt="Header Slider Image 2">
+        </div>
+        <div class="item">
+            <img  src="images/header-sliding-image-3.png" alt="Header Slider Image 3">
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="prev"></button>
+        <button id="next"></button>
+    </div>   
+    <ul class="dots">
+        <li class="active"></li>
+        <li></li>
+        <li></li>    
+    </ul>
+    <div class="text-overlay">
+        <img  src="images/logo-image-typed.png" alt="Logo Typed">
+    </div>
+        <a href="pastries.html" class="btn">SHOP NOW<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+</div>
+<script>
+    let slider = document.querySelector('.slider .list');
+let items = document.querySelectorAll('.slider .list .item');
+let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+let dots = document.querySelectorAll('.slider .dots li');
+
+let lengthItems = items.length - 1;
+let active = 0;
+next.onclick = function(){
+    active = active + 1 <= lengthItems ? active + 1 : 0;
+    reloadSlider();
+}
+prev.onclick = function(){
+    active = active - 1 >= 0 ? active - 1 : lengthItems;
+    reloadSlider();
+}
+let refreshInterval = setInterval(()=> {next.click()}, 3000);
+function reloadSlider(){
+    slider.style.left = -items[active].offsetLeft + 'px';
+
+    let last_active_dot = document.querySelector('.slider .dots li.active');
+    last_active_dot.classList.remove('active');
+    dots[active].classList.add('active');
+
+    clearInterval(refreshInterval);
+    refreshInterval = setInterval(()=> {next.click()}, 3000);
+}
+
+dots.forEach((li, key) => {
+    li.addEventListener('click', ()=>{
+        active = key;
+        reloadSlider();
+    })
+})
+
+window.onresize = function(event) {
+    reloadSlider();
+};
+</script>
+
+<section class = section2>
+    <div class = "header1"> 
+        <h1> OUR BEST SELLER </h1>
+    </div>
+    <div  class = "flexbox-container">
+        <div class="flexbox-item flexbox-item-1"> 
+           <img src="images/best-seller-image-1.png" alt="Best Seller 1" width="400" height="350">
+           <a href="link_to_your_page.html"><h1>Chocolate Cake</h1></a>
+           <p>Unwrap a slice of pure chocolate heaven. Our decadent cake, with layers of moist dark chocolate and silky chocolate mousse, creates an irresistible symphony in every bite.</p>
+           <a href="billing-form.html" class="btn">ORDER NOW<i class="fa-solid fa-arrow-up-right-from-square"></i></a> 
+        </div>
+        <div class="flexbox-item flexbox-item-2">
+            <img src="images/best-seller-image-3.png" alt="Best Seller 2" width="400" height="350">
+            <a href="link_to_your_page.html"><h1>Cheesy Ensaymada</h1></a>
+            <p>Gooey bliss, perfectly balanced. Our melt-in-your-mouth ensaymada combines sweet dough with rich cheese for a taste of Filipino heaven in every delightful bite.</p>       
+            <a href="billing-form.html" class="btn">ORDER NOW<i class="fa-solid fa-arrow-up-right-from-square"></i></a>  
+        </div>
+        <div class="flexbox-item flexbox-item-3">
+            <img src="images/best-seller-image-2.png" alt="Best Seller 3" width="400" height="350">
+            <a href="link_to_your_page.html"><h1>Lumpiang Sariwa</h1></a>
+            <p>Crave the vibrant freshness of Lumpiang Sariwa, our crown jewel. Crisp vegetables and savory meat fill perfectly textured spring rolls for a flavor explosion in every bite.</p>
+            <a href="billing-form.html" class="btn">ORDER NOW<i class="fa-solid fa-arrow-up-right-from-square"></i></a> 
+        </div>
+    </div>
+</section>
+
+<section class = section3>   
+    <div class="header2">
+        <h1> FEATURED MENU </h1>
+    </div>
+    <div  class = "flexbox-container1">
+        <div class="flexbox-item flexbox-item1-1"> 
+            <div class=".flexbox-item1-1-body">            
+        </div>       
+        <a href="pastries.html" class="btn">PASTRIES</a>          
+        </div>
+        <div class="flexbox-item flexbox-item1-2">
+            <a href="cakes.html" class="btn">CAKES</a> 
+        </div>       
+        <div class="flexbox-item flexbox-item1-3">
+            <a href="food-trays.html" class="btn">FOOD TRAYS</a> 
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <a href="index.html">
+            <img src="images/logo.png">
+        </a>
+        <div class="header1">
+            <h1>Get in Touch with Us:</h1>
+        </div>
+
+        <div class="paragraph1">
+            <a href="https://www.facebook.com/stovenoven">
+                <p><i class="fa-brands fa-square-facebook"></i>Stove n' Oven</p>
+            </a>
+            <a href="https://www.instagram.com/stove.noven/?hl=en">
+            <p><i class="fa-brands fa-square-instagram"></i>@stoven’oven</p>
+            </a>
+        </div>
+
+        <div class="header2">
+            <h1>Contact Us:</h1>
+        </div>
+
+        <div class="paragraph2">
+            <p>Cellphone Number: +6391234567</p>
+            <p>Telephone Number: (02) 88-0000</p>
+        </div>
+        <div class="header3">
+            <h1>Menu:</h1>
+        </div>
+        <div class="footer-menu">
+            <a href="pastries.html"><p>Pastries</p></a>
+            <a href="cakes.html"><p>Cakes</p></a>
+            <a href="food-trays.html"><p>Food Trays</p></a>
+        </div>
+        <a href="pastries.html" class="btn">START ORDER</a>
+    </div>
+</footer>
+</body>
+</html>

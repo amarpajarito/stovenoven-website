@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stove n' Oven - Pastries</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style-pastries.css">
+</head>
+<body>
+<header>
+    <a href="index.html">
+        <img src="images/logo.png" alt="Logo">
+    </a>
+    <nav class="navbar">
+        <a href="#">Menu<i class="fas fa-angle-down"></i></a>
+        <div class="submenu">
+            <a href="pastries.html"><img src="images/logo-menu-image-pastries.png">Pastries</a>
+            <a href="cakes.html"><img src="images/logo-menu-image-cakes.png">Cakes</a>
+            <a href="food-trays.html"><img src="images/logo-menu-image-foodtrays.png">Food Trays</a>
+        </div>
+        <a href="about.html">About</a>
+        <a href="review.html">Reviews</a>
+        <a href="contact.html">Contact</a> 
+    </nav>
+        <a href="pastries.html" class="btn">START ORDER</a>
+</header>
+
+<script>
+let menu = document.querySelector('.navbar a');
+let submenu = document.querySelector('.submenu');
+let submenuItems = document.querySelectorAll('.submenu a');
+
+let submenuVisible = false;
+
+menu.addEventListener('click', function(event) {
+    event.preventDefault();
+    if (!submenuVisible) {
+        submenu.style.opacity = '0'; 
+        submenu.style.display = 'block';
+        setTimeout(() => {
+            submenu.style.opacity = '1'; 
+        }, 50); 
+        submenuVisible = true;
+    } else {
+        submenu.style.opacity = '0'; 
+        setTimeout(() => {
+            submenu.style.display = 'none'; 
+        }, 300); 
+        submenuVisible = false;
+    }
+});
+
+submenuItems.forEach(item => {
+    item.addEventListener('click', function() {
+        submenu.style.display = 'none';
+        submenuVisible = false;
+    });
+});
+</script>
+
+<!-- SECTION 1 -->
+
+<section class = "menuheader"> 
+        
+    <img src="pastries banner.png" alter="pastries-banner"> 
+
+
+</section>
+
+
+<!-- SECTION 1 -->
+<section class = menu>
+    <div class = "header1"> 
+        <h1> MENU </h1>
+    </div>
+    <div  class = "flexbox-container-menu">
+        <div class="flexbox-item flexbox-item-1-menu"> 
+
+           <img src="pastries/2.png" alt="Best Seller 1" width="400" height="350">
+           <h1>Banana muffin</h1>
+           <hr class = "line" color = #102c57 size=4 noshade>
+           <h2>60 PHP / DOZEN</h2>
+           <p> Enjoy a burst of fruity sweetness with banana muffins, moist and flavorful treats made with ripe bananas, and a hint of warm spices. </p>
+           <a href="billing-form.html" class="btn">ORDER NOW<i class="fa-solid fa-arrow-up-right-from-square"></i></a> 
+           
+        </div>
+        <div class="flexbox-item flexbox-item-2-menu">
+            <img src="pastries/3.png" alt="Best Seller 2" width="400" height="350">
+           <h1>Butter cookies</h1>
+            <hr class = "line" color = #102c57 size=4 noshade>
+            <h2>300 PHP / DOZEN</h2>
+            <p>Delicate and melt-in-your-mouth, butter cookies are simple yet satisfying treats crafted from rich butter, flour, and sugar.</p> 
+             
+            <a href="billing-form.html" class="btn">ORDER NOW<i class="fa-solid fa-arrow-up-right-from-square"></i></a>  
+        </div>
+        <div class="flexbox-item flexbox-item-3-menu">
+            <img src="pastries/4.png" alt="Best Seller 3" width="400" height="350">
+            <h1>Cheese rolls</h1>
+            <hr class = "line" color = #102c57 size=4 noshade>
+            <h2>360 PHP / Dozen</h2>
+            <p> Indulge in a savory-sweet delight with cheese rolls, featuring soft bread dough swirled with a generous filling of creamy cheese, baked to golden perfection.
+
+            </p>
+            
+            <a href="billing-form.html" class="btn">ORDER NOW<i class="fa-solid fa-arrow-up-right-from-square"></i></a> 
+        </div>
+        <!--Row 2-->
+        <div class="flexbox-item flexbox-item-4-menu"> 
+
+            <img src="pastries/5.png" alt="Best Seller 1" width="400" height="350">
+            <h1>Chocolate Cookies</h1>
+            <hr class = "line" color = #102c57 size=4 noshade>
+            <h2>350 PHP / Dozen</h2>
+            <p> Crisp on the edges, chewy in the middle, and loaded with gooey chocolate chips, chocolate chip cookies are a timeless favorite. </p>
+            <a href="billing-form.html" class="btn">ORDER NOW<i class="fa-solid fa-arrow-up-right-from-square"></i></a> 
+            
+         </div>
+         <div class="flexbox-item flexbox-item-5-menu">
+             <img src="pastries/6.png" alt="Best Seller 2" width="400" height="350">
+            <h1>Coconut macaroons</h1>
+             <hr class = "line" color = #102c57 size=4 noshade>
+             <h2>120 PHP / Dozen</h2>
+             <p>Transport yourself to the tropics with coconut macaroons, delectable treats featuring moist coconut flakes bound together with sweetened condensed milk. </p>           
+              
+             <a href="billing-form.html" class="btn">ORDER NOW<i class="fa-solid fa-arrow-up-right-from-square"></i></a>  
+         </div>
+         <div class="flexbox-item flexbox-item-6-menu">
+             <img src="pastries/7.png" alt="Best Seller 3" width="400" height="350">
+            <h1>Crinkles</h1>
+             <hr class = "line" color = #102c57 size=4 noshade>
+             <h2>200 PHP / Dozen</h2>
+             <p>Irresistibly soft and fudgy, crinkles are classic chocolate cookies coated in powdered sugar, creating a crackled appearance. </p>
+             
+             <a href="billing-form.html" class="btn">ORDER NOW<i class="fa-solid fa-arrow-up-right-from-square"></i></a> 
+         </div>
+         <!--Row 3-->
+         <div class="flexbox-item flexbox-item-7-menu"> 
+
+            <img src="pastries/1.png" alt="Best Seller 1" width="400" height="350">
+            <h1>Donut</h1>
+            <hr class = "line" color = #102c57 size=4 noshade>
+            <h2>50 PHP / Piece</h2>
+            <p>A symphony of vanilla and caramel flavors, this cake delights the palate with its moist vanilla sponge layers sandwiched between velvety caramel frosting. </p>
+            <a href="billing-form.html" class="btn">ORDER NOW<i class="fa-solid fa-arrow-up-right-from-square"></i></a> 
+            
+         </div>
+         <div class="flexbox-item flexbox-item-8-menu"">
+             <img src="pastries/8.png" alt="Best Seller 2" width="400" height="350">
+             <h1>Ensaymada</h1>
+             <hr class = "line" color = #102c57 size=4 noshade>
+             <h2>40 PHP / Piece</h2>
+             <p>A Filipino delicacy, yema cake features a soft and fluffy sponge cake soaked in sweet yema sauce, creating a decadent dessert beloved for its rich flavor and creamy texture. </p>           
+              
+             <a href="billing-form.html" class="btn">ORDER NOW<i class="fa-solid fa-arrow-up-right-from-square"></i></a>  
+         </div>
+         <div class="flexbox-item flexbox-item-9-menu">
+             <img src="pastries/9.png" alt="Best Seller 3" width="400" height="350">
+             <h1>Matcha Cookies</h1>
+             <hr class = "line" color = #102c57 size=4 noshade>
+             <h2>350 PHP / Dozen </h2>
+             <p>Indulge in the irresistible combination of bananas, toffee, and whipped cream with banoffee cake, a delectable dessert that captures the essence of the classic banoffee pie in cake form.
+             </p>
+             
+             <a href="billing-form.html" class="btn">ORDER NOW<i class="fa-solid fa-arrow-up-right-from-square"></i></a> 
+         </div>
+    </div>
+    
+</section>
+
+
+
+<footer>
+    <div class="footer-content">
+        <a href="index.html">
+            <img src="images/logo.png">
+        </a>
+        <div class="header1">
+            <h1>Get in Touch with Us:</h1>
+        </div>
+
+        <div class="paragraph1">
+            <a href="https://www.facebook.com/stovenoven">
+                <p><i class="fa-brands fa-square-facebook"></i>Stove n' Oven</p>
+            </a>
+            <a href="https://www.instagram.com/stove.noven/?hl=en">
+            <p><i class="fa-brands fa-square-instagram"></i>@stoven’oven</p>
+            </a>
+        </div>
+
+        <div class="header2">
+            <h1>Contact Us:</h1>
+        </div>
+
+        <div class="paragraph2">
+            <p>Cellphone Number: +6391234567</p>
+            <p>Telephone Number: (02) 88-0000</p>
+        </div>
+        <div class="header3">
+            <h1>Menu:</h1>
+        </div>
+        <div class="footer-menu">
+            <a href="pastries.html"><p>Pastries</p></a>
+            <a href="cakes.html"><p>Cakes</p></a>
+            <a href="food-trays.html"><p>Food Trays</p></a>
+        </div>
+        <a href="pastries.html" class="btn">START ORDER</a>
+    </div>
+</footer>
+</body>
+</html>
